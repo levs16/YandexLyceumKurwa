@@ -36,5 +36,6 @@ def to_std(tel):
     
     return tel
 
+
 if __name__ == "__main__":
     print(to_std(input()))
