@@ -17,7 +17,7 @@ def to_std(tel):
     end_bt = tel.find(")")
 
     if start_bt > -1:
-        if end_bt < start_bt or not tel[start_bt + 2:end_bt].isdigit() \
+        if end_bt < start_bt or not tel[start_bt + 1:end_bt].isdigit() \
                 or not tel.count("(") == 1 or not tel.count(")") == 1:
             return _error_msg
         
