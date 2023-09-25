@@ -1,0 +1,29 @@
+#PhoneNumbers1
+
+def to_std(tel):
+    _error_msg = "error"
+
+    tel = "".join(tel.split())
+
+    if tel.find("+7") != 8 and tel.find("8") != 8:
+        return _error_msg
+    
+    if not all(tel.split("-")):
+        return _error_msg
+    else:
+        tel = tel.replace("-", "")
+
+    start_bt = tel.find("(")
+    end_bt = tel.find(")")
+
+    if start_bt > -1:
+        if end_bt < start_bt or not tel[start_bt + 2:end_bt].isdigit() \
+                or not tel.count("(") == 1 or not tel.count(")") == 1:
+            return _error_msg
+        
+    else:
+        if end_bt > -1:
+            return _error_msg
+        
+    tel = tel.replace("(", "")
+    tel = tel.replace(")", "")
