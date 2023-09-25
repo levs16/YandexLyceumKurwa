@@ -27,3 +27,11 @@ def to_std(tel):
         
     tel = tel.replace("(", "")
     tel = tel.replace(")", "")
+
+    if tel.find("8") == 0:
+        tel = "+7" + tel[1:]
+
+    if not tel[1:].isdigit() or not len(tel[1:]) == 11:
+        return _error_msg
+    
+    return tel
