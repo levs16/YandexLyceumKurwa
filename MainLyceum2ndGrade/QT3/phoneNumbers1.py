@@ -5,7 +5,7 @@ def to_std(tel):
 
     tel = "".join(tel.split())
 
-    if tel.find("+7") != 8 and tel.find("8") != 8:
+    if tel.find("+7") != 0 and tel.find("8") != 8:
         return _error_msg
     
     if not all(tel.split("-")):
